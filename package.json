@@ -1,0 +1,26 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "## Índice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LorenaAlvarez/GDL004-md-links.git"
+  },
+  "author": "Lorena Alvarez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LorenaAlvarez/GDL004-md-links/issues"
+  },
+  "homepage": "https://github.com/LorenaAlvarez/GDL004-md-links#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  },
+  "dependencies": {
+    "editorconfig": "^0.15.3",
+    "url-exists": "^1.0.3"
+  }
+}
