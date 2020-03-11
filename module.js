@@ -1,9 +1,21 @@
 const fs = require('fs');
 const urlExists = require('url-exists');
+const ruta = require('path');
+
+  
 
 
 module.exports = addExp = (path) => {
-    // extension .md
+
+    let ext = ruta.extname(path)
+    if(ext === '.md'){
+        console.log(path);
+    }else {
+        console.log('File extension is invalid');
+        return;
+    };
+
+
     let promise = new Promise((resolve, reject) => {
         fs.readFile(path, 'utf8', (err, data) => {
             if (err) {
@@ -17,10 +29,10 @@ module.exports = addExp = (path) => {
 
                 for (let i = 0; i < links.length; i++) {
                     const exec = regExpObj.exec(links[i])
-                    
+
                     let object = {
-                        text: exec[1],
                         href: exec[2],
+                        text: exec[1],
                         file: path
                     }
                     arrayLinks.push(object)
@@ -29,22 +41,18 @@ module.exports = addExp = (path) => {
             }   
         });
     });
-     promise.then(console.log) 
+    /* promise.then(console.log) */
 
-
-     validateUrls = (links) => { 
+    validateUrls = (links) => { 
         for (let link of links){
-            urlExists(link, function(err, exists) {
+            urlExists(link.href, function(err, exists) {
                 if (exists) {
-                  console.log('OK URL');
+                    console.log(link.href + ': OK URL');
                 } else {
-                  console.log('FAIL URL');
+                    console.log(link.href + ': FAIL URL');
                 }
-              });
-        }
+            });
+        }  
     }
     promise.then(validateUrls)
 } 
-
-
- /* }  */
