@@ -1,9 +1,11 @@
 const fs = require('fs');
-const urlExists = require('url-exists');
 const ruta = require('path');
+const { validateUrls } = require('./validate.js')
 
-  
-
+const options = {
+    validate: process.argv[3] === '-v',
+    stats: process.argv[3] === '-s',
+}
 
 module.exports = addExp = (path) => {
 
@@ -41,18 +43,12 @@ module.exports = addExp = (path) => {
             }   
         });
     });
-    /* promise.then(console.log) */
+     promise.then(links => {
+         if(options.validate === false && options.stats === false){
+             console.log(links);             
+         } else if(options.validate === true){
+             validateUrls(links)
+         }      
 
-    validateUrls = (links) => { 
-        for (let link of links){
-            urlExists(link.href, function(err, exists) {
-                if (exists) {
-                    console.log(link.href + ': OK URL');
-                } else {
-                    console.log(link.href + ': FAIL URL');
-                }
-            });
-        }  
-    }
-    promise.then(validateUrls)
-} 
+    }); 
+}
