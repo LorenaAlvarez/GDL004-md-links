@@ -24,6 +24,8 @@
   },
   "dependencies": {
     "editorconfig": "^0.15.3",
+    "node-fetch": "^2.6.0",
+    "sudo": "^1.0.3",
     "url-exists": "^1.0.3"
   }
 }

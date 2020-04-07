@@ -1,6 +1,6 @@
 const ruta = require('path');
 
-module.exports.validateExtention = ( path ) => {
+module.exports.validateExtension = ( path ) => {
     let ext = ruta.extname(path);
     if (ext === '.md') {
         return true;
