@@ -6,9 +6,6 @@ module.exports.stats = (urls, validate= false) => {
   let broken = 0;
 
  
-console.log(urls);
-
-
   for (let url of urls) {
     if(validate){
       if(url.status >= 300 || url.status < 200 ){
@@ -23,8 +20,7 @@ console.log(urls);
       counts[url.href] = 1
     }
   }
-  /* console.log(counts) */
-
+  
   for (let number in counts) {
    
     if (counts[number] === 1 ) {

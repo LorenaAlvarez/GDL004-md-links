@@ -1,33 +1,40 @@
-const mdlinks = require('./module.js')
-const path = process.argv[2];
+const { validateExtension } = require('./validateExtension.js');
+const { validateUrls } = require('./validate.js')
+const { links } = require('./links.js')
+const { stats } = require('./stats.js')
 
-let options = {
-    validate: false,
-    stats: false
-};
 
-//includes()
-if (process.argv.indexOf('--validate') > -1){
-    options.validate = true;
+module.exports = addExp = (path, options) => {
+
+    return new Promise((resolve, reject) => {
+    if (validateExtension(path)){
+        links(path).then((objLinks) => {
+            if (options.validate === true && options.stats === true) {
+                validateUrls(objLinks).then((res)=>{
+                    resolve(stats(res, options.validate))
+                })       
+            } else if (options.validate === true) {
+                validateUrls(objLinks).then(response => {
+                    resolve(response)
+                }) 
+            } else if (options.stats === true) {
+               resolve(stats(objLinks))
+            } else {
+                resolve(objLinks)
+           }
+            
+        })
+        .catch((err) => {
+            reject(err);
+        })
+    
+    }else {
+       
+        reject("Extension isn't valid")
+    }
+
+  })
+
+  //return mainPromise;
+
 }
-
-if (process.argv.indexOf('--stats') > -1){
-     options.stats = true;
-};
- 
-mdlinks(path, options).then((links) => {
-  /*   return links; */
-    console.log(links)
-
-    /* console.log(links); */
-    /**
-     * We will handle the data to write in console.
-     */
-    /*console.log('ESTAMOS AFUERA DE module.js')
-    links.forEach((l) => {console.log(l)});*/
-}).catch((err)=> {
-    console.log(err)
-})
-
- 
-  

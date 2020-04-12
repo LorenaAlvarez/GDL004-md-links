@@ -2,9 +2,9 @@
   "name": "package.json",
   "version": "1.0.0",
   "description": "## Índice",
-  "main": "module.js",
+  "main": "index.js",
   "bin": {
-    "md-links": "index.js"
+    "md-links": "CLI.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
