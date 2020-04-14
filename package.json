@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "## Índice",
   "main": "index.js",
-  "bin": {
-    "md-links": "CLI.js"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,6 +12,9 @@
   },
   "author": "Lorena Alvarez",
   "license": "ISC",
+  "bin": {
+    "md-links": "cli.js"
+  },
   "bugs": {
     "url": "https://github.com/LorenaAlvarez/GDL004-md-links/issues"
   },
@@ -23,6 +23,7 @@
     "eslint": "^6.8.0"
   },
   "dependencies": {
+    "chalk": "^4.0.0",
     "editorconfig": "^0.15.3",
     "node-fetch": "^2.6.0",
     "sudo": "^1.0.3",
