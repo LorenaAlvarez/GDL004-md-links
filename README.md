@@ -1,4 +1,4 @@
-# @lorenaAlvarez/md-links
+# @lorena_alvarez/md-links
 ![npm](https://img.shields.io/npm/v/@lorena_alvarez/md-links) 
 ![GitHub last commit](https://img.shields.io/github/last-commit/lorenaAlvarez/GDL004-md-links) 
 ![NPM](https://img.shields.io/npm/l/@lorena_alvarez/md-links)
