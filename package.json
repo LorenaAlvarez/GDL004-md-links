@@ -1,7 +1,7 @@
 {
-  "name": "package.json",
+  "name": "md-links",
   "version": "1.0.0",
-  "description": "## Índice",
+  "description": "librería que lee archivos markdown y valida el status de cada link",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

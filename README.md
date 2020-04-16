@@ -1,23 +1,23 @@
-# @/md-links
+# @lorenaAlvarez/md-links
+![npm](https://img.shields.io/npm/v/@lorena_alvarez/md-links) 
+![GitHub last commit](https://img.shields.io/github/last-commit/lorenaAlvarez/GDL004-md-links) 
+![NPM](https://img.shields.io/npm/l/@lorena_alvarez/md-links)
 
 
 
-librería creada con [Node.js](https://nodejs.org/), que lee y analiza archivos
+Librería creada con [Node.js](https://nodejs.org/), que lee y analiza archivos
 en formato `Markdown`, para verificar los links que contengan y reportar
 algunas estadísticas.
 
 ## Instalación
 
-Para ejecutar e instalar este módulo en tu proyecto:
+Para ejecutar e instalar este módulo:
 ```js
-const mdLinks = require("md-links");
+npm install https://github.com/LorenaAlvarez/GDL004-md-links
 ```
 
 
 ### JavaScript API
-
-descripción previa:
-
 
 ##### Argumentos
 
@@ -30,29 +30,15 @@ descripción previa:
 
 ##### Valor de retorno
 
-
-
 - `href`: URL encontrada.
 - `text`: Texto que aparecía dentro del link (`<a>`).
 - `file`: Ruta del archivo donde se encontró el link.
 
-### Ejemplo:
 
 
-```js
-const mdLinks = require("md-links");
+### CLI (Command Line Interface)
 
-mdLinks("./some/example.md")
-  .then(links => {
-    // => [{ href, text, file }]
-  })
-  .catch(console.error);
-```
-
-
-### CLI (Command Line Interface - Interfaz de Línea de Comando)
-
-El ejecutable de nuestra aplicación debe poder ejecutarse de la siguiente
+La aplicación debe poder ejecutarse de la siguiente
 manera a través de la terminal:
 
 `md-links <path-to-file> [options]`
@@ -66,11 +52,11 @@ $ md-links ./some/example.md
 ./some/example.md http://google.com/ Google
 ```
 
-El comportamiento por defecto no debe validar si las URLs responden ok o no,
-solo debe identificar el archivo markdown (a partir de la ruta que recibe como
-argumento), analizar el archivo Markdown e imprimir los links que vaya
+El comportamiento por defecto no valida si las URLs responden ok o no,
+solo identifica el archivo markdown (a partir de la ruta que recibe como
+argumento), analiza el archivo Markdown e imprime los links que vaya
 encontrando, junto con la ruta del archivo donde aparece y el texto
-que hay dentro del link (truncado a 50 caracteres).
+que hay dentro del link (truncado a 50 caracteres). 
 
 #### Options
 

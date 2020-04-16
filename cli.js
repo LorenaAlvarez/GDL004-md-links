@@ -39,7 +39,7 @@ mdlinks(path, options).then((links) => {
         }
     } else {
         links.forEach((l) => {
-            console.log(chalk.yellow(' '+l.file+' ')+l.href+' '+chalk.magenta(l.text))
+            console.log(chalk.yellow(l.file+' ')+l.href+' '+chalk.magenta(l.text))
         });
     }
     
