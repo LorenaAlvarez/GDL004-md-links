@@ -1,5 +1,5 @@
 {
-  "name": "md-links",
+  "name": "@lorena_alvarez/md-links",
   "version": "1.0.0",
   "description": "librería que lee archivos markdown y valida el status de cada link",
   "main": "index.js",

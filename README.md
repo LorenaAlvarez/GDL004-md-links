@@ -5,7 +5,7 @@
 
 
 
-Librería creada con [Node.js](https://nodejs.org/), que lee y analiza archivos
+Librería creada con [Node.js](https://nodejs.org/) que lee y analiza archivos
 en formato `Markdown`, para verificar los links que contengan y reportar
 algunas estadísticas.
 
@@ -13,7 +13,7 @@ algunas estadísticas.
 
 Para ejecutar e instalar este módulo:
 ```js
-npm install https://github.com/LorenaAlvarez/GDL004-md-links
+npm i @lorena_alvarez/md-links
 ```
 
 
