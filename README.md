@@ -13,7 +13,7 @@ algunas estadísticas.
 
 Para ejecutar e instalar este módulo:
 ```js
-npm i @lorena_alvarez/md-links
+npm i @lorena_alvarez/md-links -g
 ```
 
 
